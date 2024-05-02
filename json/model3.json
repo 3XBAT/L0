@@ -1,0 +1,62 @@
+{
+    "order_uid": "model_3",
+    "track_number": "trackNumber_trackNumder",
+    "entry": "testEntry",
+    "delivery": {
+      "name": "Lena Golovach",
+      "phone": "+79012223223",
+      "zip": "777656",
+      "city": "Taganrog",
+      "address": "Pushkina 42",
+      "region": "Krasnodarskiy area",
+      "email": "lenochka@example.com"
+    },
+    "payment": {
+      "transaction": "t23sdfaction232",
+      "request_id": "req42uesj12nt_iD",
+      "currency": "RUB",
+      "provider": "paypro3vider",
+      "amount": 1259,
+      "payment_dt": 16782123,
+      "bank": "sber",
+      "delivery_cost": 12300,
+      "goods_total": 13030,
+      "custom_fee": 504
+    },
+    "items": [
+      {
+        "chrt_id": 987651,
+        "track_number": "Track43223",
+        "price": 12600,
+        "rid": "rid123456789012",
+        "name": "hoodies",
+        "sale": 12,
+        "size": "48",
+        "total_price": 5400,
+        "nm_id": 543321,
+        "brand": "Ivanovskiy tricotage",
+        "status": 2012
+      },
+      {
+        "chrt_id": 5432112,
+        "track_number": "track42112",
+        "price": 8001,
+        "rid": "rid0987654321",
+        "name": "shoes",
+        "sale": 2,
+        "size": "41",
+        "total_price": 6403,
+        "nm_id": 987165,
+        "brand": "Gosha_Rubchinskiy",
+        "status": 2023
+      }
+    ],
+    "locale": "ru",
+    "internal_signature": "signftureTest",
+    "customer_id": "lenochka",
+    "delivery_service": "expresss",
+    "shardkey": "151",
+    "sm_id": 432,
+    "date_created": "2024-02-12T10:32:00Z",
+    "oof_shard": "3"
+  }

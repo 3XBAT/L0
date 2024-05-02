@@ -1,0 +1,62 @@
+{
+    "order_uid": "model_2",
+    "track_number": "NEWTRACK12345",
+    "entry": "NEWENTRY",
+    "delivery": {
+      "name": "Jason Statham",
+      "phone": "+78005553535",
+      "zip": "123456",
+      "city": "New City",
+      "address": "123 Main Street",
+      "region": "State",
+      "email": "JasonStatham@example.com"
+    },
+    "payment": {
+      "transaction": "t3sttr4ns4ct10n",
+      "request_id": "r3qu3st123",
+      "currency": "EUR",
+      "provider": "payprovider",
+      "amount": 2500,
+      "payment_dt": 1678901234,
+      "bank": "beta",
+      "delivery_cost": 1200,
+      "goods_total": 1300,
+      "custom_fee": 50
+    },
+    "items": [
+      {
+        "chrt_id": 98765,
+        "track_number": "TESTTRACK12345",
+        "price": 600,
+        "rid": "rid1234567890",
+        "name": "Shoes",
+        "sale": 10,
+        "size": "42",
+        "total_price": 540,
+        "nm_id": 543211,
+        "brand": "NewBrand",
+        "status": 201
+      },
+      {
+        "chrt_id": 54321,
+        "track_number": "TESTTRACK12456",
+        "price": 800,
+        "rid": "rid0987654321",
+        "name": "Jacket",
+        "sale": 20,
+        "size": "L",
+        "total_price": 640,
+        "nm_id": 987651,
+        "brand": "TBOE",
+        "status": 203
+      }
+    ],
+    "locale": "fr",
+    "internal_signature": "signftureTest",
+    "customer_id": "JasonStatham123",
+    "delivery_service": "expres",
+    "shardkey": "12",
+    "sm_id": 41,
+    "date_created": "2024-05-01T15:30:00Z",
+    "oof_shard": "2"
+  }
