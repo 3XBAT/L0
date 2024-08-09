@@ -14,14 +14,15 @@ type CacheService struct {
 func NewCacheService(repo *repository.Repository) (*CacheService, error) {
 	cacheService := &CacheService{repo: repo}
 	if err := cacheService.NewCache(); err != nil {
-		
+
 		return nil, err
 
 	}
 	return cacheService, nil
 }
 
-func (c *CacheService) NewCache() error { //заполняет кэш из postgres
+// NewCache puts data in the cache from postgres
+func (c *CacheService) NewCache() error {
 	cache := map[string]L0.Order{}
 
 	orders, err := c.repo.RecoverCache()
@@ -37,12 +38,12 @@ func (c *CacheService) NewCache() error { //заполняет кэш из postg
 	return nil
 }
 
-func (c *CacheService) AddOrder(orderUID string, order L0.Order) { //просто добавляем заказ в кэш
-	
+// AddOrder adds the order to the cache
+func (c *CacheService) AddOrder(orderUID string, order L0.Order) {
 	c.Cache[orderUID] = order
 }
 
-func (c *CacheService) GetCache(uid string) (L0.Order, error) { 
+func (c *CacheService) GetCache(uid string) (L0.Order, error) {
 	c.repo.RecoverCache()
 	order := c.Cache[uid]
 	if len(order.OrderUID) == 0 {

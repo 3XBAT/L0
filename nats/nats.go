@@ -14,7 +14,6 @@ import (
 func NewSubscribeToChannel(clusterId, clientId, channelName string, repository *repository.Repository, service *service.Service) (stan.Conn, error) {
 
 	sc, err := stan.Connect(clusterId, clientId, stan.NatsURL("nats://localhost:4222"))
-
 	if err != nil {
 		logrus.Errorf("Error while connecting to NATS-streaming: %s", err.Error())
 	}
@@ -26,7 +25,7 @@ func NewSubscribeToChannel(clusterId, clientId, channelName string, repository *
 			logrus.Errorf("Error while unparsing JSON: %s", err.Error())
 			return
 		}
-	
+
 		if err := repository.SaveOrder(order); err != nil {
 			logrus.Errorf("Error while pasting in database : %s", err.Error())
 			return

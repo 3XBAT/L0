@@ -18,14 +18,14 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 	//"github.com/spf13/viper"
-	"github.com/subosito/gotenv" 
+	"github.com/subosito/gotenv"
 )
 
 func main() {
 
-	 if err := gotenv.Load(); err != nil {
-	 	log.Fatalf("failed loading env variables: %s", err.Error())
-	 }
+	if err := gotenv.Load(); err != nil {
+		log.Fatalf("failed loading env variables: %s", err.Error())
+	}
 
 	db, err := repository.NewPostgresDB(repository.Config{
 		Host:     "localhost",
@@ -49,15 +49,15 @@ func main() {
 	handler := handler.NewHandler(service)
 
 	srv := new(L0.Server)
-	
-	go func(){
+
+	go func() {
 		if err := srv.Run("8080", handler.InitRoutes()); err != nil {
 			log.Fatalf("error occured while runnig http server")
 		}
 	}()
 
-	clusterId   := "test-cluster"
-	clientId    := "vibe"
+	clusterId := "test-cluster"
+	clientId := "vibe"
 	channelName := "vibeChannel"
 
 	nats, err := nats.NewSubscribeToChannel(clusterId, clientId, channelName, repos, service)
@@ -70,7 +70,7 @@ func main() {
 		for {
 			var filename string
 			fmt.Scanln(&filename)
-			file := fmt.Sprintf("json%s", filename)
+			file := fmt.Sprintf("%s", filename)
 			jsonStr, err := ioutil.ReadFile(file)
 
 			if err != nil {
@@ -80,6 +80,8 @@ func main() {
 			if err := nats.Publish(channelName, jsonStr); err != nil {
 				logrus.Errorf("Error while publised msg : %s", err.Error())
 			}
+
+			logrus.Infof("Message sent: %s", filename)
 		}
 	}()
 
